@@ -15,8 +15,8 @@ public class Arrondir : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        // Inverser la direction de l'arrondisement aux limites
+    { 
+        // magnitude = longeur de l'objet
         if (transform.localScale.magnitude >= 8.0f)
         {
             arrondiActif = false;
@@ -29,11 +29,11 @@ public class Arrondir : MonoBehaviour
         // Appliquer l'arrondisement
         if (arrondiActif)
         {
-            transform.localScale += vCroissance;
+            transform.localScale += vCroissance *Time.deltaTime ;
         }
         else
         {
-            transform.localScale -= vCroissance;
+            transform.localScale -= vCroissance * Time.deltaTime;
         }
     }
 }

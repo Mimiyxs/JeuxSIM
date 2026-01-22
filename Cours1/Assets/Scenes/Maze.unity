@@ -1539,6 +1539,7 @@ GameObject:
   - component: {fileID: 1625308057}
   - component: {fileID: 1625308056}
   - component: {fileID: 1625308055}
+  - component: {fileID: 1625308059}
   m_Layer: 0
   m_Name: Objectif
   m_TagString: Untagged
@@ -1638,6 +1639,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 122048849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1625308059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625308054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31d7321e1f1829428b479adef5f79b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DetectionFin
 --- !u!4 &1637933506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3046167473515718437, guid: 0da0f03aa0ae09b4096a2e739ca036b8, type: 3}
@@ -1669,7 +1682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046167473515718437, guid: 0da0f03aa0ae09b4096a2e739ca036b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39106262
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3046167473515718437, guid: 0da0f03aa0ae09b4096a2e739ca036b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2113,7 +2126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046167473515718437, guid: 0da0f03aa0ae09b4096a2e739ca036b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39106262
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3046167473515718437, guid: 0da0f03aa0ae09b4096a2e739ca036b8, type: 3}
       propertyPath: m_LocalPosition.z

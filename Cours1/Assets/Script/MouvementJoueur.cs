@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Deplacement : MonoBehaviour
+public class MouvementJoueur : MonoBehaviour
 {
 
     private InputAction _move;
@@ -28,7 +28,7 @@ public class Deplacement : MonoBehaviour
         sphereRigidbody.AddForce(force);
     }
 
-    private void replacerJoueur()
+    public void replacerJoueur()
     {
         transform.position = positionDepart;
         sphereRigidbody.linearVelocity = Vector3.zero;

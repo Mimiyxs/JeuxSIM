@@ -22,7 +22,9 @@ public class MouvementJoueur : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 mouvementApplique = _move.ReadValue<Vector2>();
+
+        //pusique le clavier est dans l'autre sens, il faut inversé les angles et les touches.
+        Vector2 mouvementApplique = -_move.ReadValue<Vector2>();
         Vector3 force = new Vector3(mouvementApplique.x, 0, mouvementApplique.y);
         force *= niveauForce;
         sphereRigidbody.AddForce(force);

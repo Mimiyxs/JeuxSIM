@@ -1,0 +1,25 @@
+RigideBody : 
+	- le GameObject peut tomber, entre en collision, réagir aux force
+	- Sans le , l'objet est juste visuel, il ne bouge pas physiquement
+
+	- Utilisation :
+		- Gravité : 
+			* Activé = l'objet tombe 
+			* Désactivé = l'objet va flotte 
+		- Masse : plus la masse est grand = plus l'objet est dur à pousser
+		- Drag : ralentir le movement
+		- Angular Drag : ralentir la rotation
+
+Utilise Rigidbody si : Personnage, Objets physiques (caisses, balles), Véhicules
+
+les méthodes :
+	- AddForce : applique une force physique à un rigideBody (la masse influence le résultat)		
+		- ForceMode : force continue, dépend de la masse 
+		- ForceMode.Impulse : coup instantané (un saut) 
+		- Forcemode.Acceleration : Ignore la masse 
+	
+
+rigidbody.AddForce(Vector3.up * force, ForceMode.Impulse);
+	- Vector3.up : direction vers le haut (0,1,0)
+	- * force : intensité de pousée (ex : force = 5f)
+	- ForceMode.Impulse : coup instantané sur un RigideBody 

@@ -10,7 +10,7 @@ public class MouvementJoueur : MonoBehaviour
 
 
     // Serializefield permet de donner une valeur dans Unity 
-    [SerializeField] private float niveauForce = 5;
+    [SerializeField] private float niveauForce ;
 
     private void Start()
     {
@@ -22,9 +22,7 @@ public class MouvementJoueur : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        //pusique le clavier est dans l'autre sens, il faut inversé les angles et les touches.
-        Vector2 mouvementApplique = -_move.ReadValue<Vector2>();
+        Vector2 mouvementApplique = _move.ReadValue<Vector2>();
         Vector3 force = new Vector3(mouvementApplique.x, 0, mouvementApplique.y);
         force *= niveauForce;
         sphereRigidbody.AddForce(force);
@@ -36,4 +34,6 @@ public class MouvementJoueur : MonoBehaviour
         sphereRigidbody.linearVelocity = Vector3.zero;
         sphereRigidbody.angularVelocity = Vector3.zero;
     }
+
+
 }

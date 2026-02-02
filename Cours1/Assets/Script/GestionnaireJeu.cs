@@ -8,7 +8,9 @@ public class GestionnaireJeu : MonoBehaviour
     //La balle
     [SerializeField] private GameObject balle;
 
-    
+    //Zone arrivee
+    [SerializeField] private ZoneArrivee2 zone;
+
     private Vector3 positionDepart;
 
 
@@ -16,21 +18,33 @@ public class GestionnaireJeu : MonoBehaviour
     [SerializeField] private TMP_Text textPoint;
     private int points; 
 
-    //Zone 
-    [SerializeField] private ZoneArrivee zone;
 
 
     void Start()
     {
      
         points = 0;
-
+        zone.zoneAtteint += AugementerPoint;
+        zone.zoneAtteint += DupliquerBalle;
         
+        positionDepart = balle.transform.position;
+        textPoint.text = "Points : " + points.ToString();
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void AugementerPoint()
     {
-        
+        points++;
+        textPoint.text = "Points : " + points.ToString();
+    }
+
+    private void DupliquerBalle()
+    {
+        GameObject nouvelleBalle = Instantiate(balle, positionDepart, Quaternion.identity);
+
+        Destroy(balle.GetComponent<Mouv_Mod2>());
+        zone.ball = nouvelleBalle;
+        balle = nouvelleBalle;
     }
 }

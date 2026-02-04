@@ -1,0 +1,5 @@
+ScreenPointToRay : 
+take a pixel on your screen and turn it into a ray going into the 3D world
+= screen position (in pixels )
+- ray.origin = camera position
+- ray.direction = direction into the world

@@ -15,7 +15,7 @@ public class teleporterClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mouse.current.leftButton.isPressed)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             var mousePosition = Mouse.current.position.ReadValue();
             var ray = Camera.main.ScreenPointToRay(mousePosition);

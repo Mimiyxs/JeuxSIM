@@ -834,8 +834,6 @@ GameObject:
   - component: {fileID: 347000912}
   - component: {fileID: 347000911}
   - component: {fileID: 347000915}
-  - component: {fileID: 347000914}
-  - component: {fileID: 347000916}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -910,27 +908,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347000910}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.50130403, y: -0, z: -0, w: 0.8652712}
-  m_LocalPosition: {x: 0.39, y: 8.78, z: -6.04}
+  m_LocalRotation: {x: 0.32675773, y: -0, z: -0, w: 0.9451082}
+  m_LocalPosition: {x: 0.39, y: 6.72, z: -9.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 60.173, y: 0, z: 0}
---- !u!114 &347000914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347000910}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d9eb2cafaca037468128efb345b537b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::teleporterClick
-  personnage: {fileID: 1343718051}
-  plane: {fileID: 295267593}
+  m_LocalEulerAnglesHint: {x: 38.144, y: 0, z: 0}
 --- !u!114 &347000915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,22 +959,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &347000916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347000910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f2c631c2db0ba84b9b2379873876489, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::slowTeleport
-  personnage: {fileID: 1343718051}
-  plane: {fileID: 295267593}
-  moveSpeed: 5
-  rotationSpeed: 3
 --- !u!1 &472191815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2048,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343718052}
+  - component: {fileID: 1343718053}
+  - component: {fileID: 1343718054}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Untagged
@@ -2105,6 +2075,36 @@ Transform:
   - {fileID: 472191816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1343718053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343718051}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9eb2cafaca037468128efb345b537b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::teleporterClick
+  personnage: {fileID: 1343718051}
+  plane: {fileID: 295267593}
+--- !u!114 &1343718054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343718051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2c631c2db0ba84b9b2379873876489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::slowTeleport
+  personnage: {fileID: 1343718051}
+  plane: {fileID: 295267593}
+  moveSpeed: 5
+  rotationSpeed: 3
 --- !u!1 &1375850847
 GameObject:
   m_ObjectHideFlags: 0

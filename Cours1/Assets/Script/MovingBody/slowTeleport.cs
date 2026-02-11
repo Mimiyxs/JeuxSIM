@@ -32,6 +32,7 @@ public class slowTeleport : MonoBehaviour
                     if (coroutine != null) StopAllCoroutines();
 
                     objectif = rayHit.point;
+                    objectif.y = personnage.transform.position.y;
 
                     Vector3 direction = (objectif - personnage.transform.position).normalized;
                     coroutine = StartCoroutine(DeplacerPerso(direction));
@@ -65,7 +66,6 @@ public class slowTeleport : MonoBehaviour
         while ((personnage.transform.position - objectif).magnitude > 0.5f)
         {
             
-            //personnage.transform.LookAt(objectif);
             personnage.transform.position += moveSpeed * direction * Time.deltaTime;
 
             yield return null;

@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 247002962}
   - component: {fileID: 247002961}
   - component: {fileID: 247002965}
+  - component: {fileID: 247002966}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -243,6 +244,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3240a93a7ace6504397492af93634fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cube
+  terrain: {fileID: 1173890792}
+--- !u!195 &247002966
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247002960}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &521833416
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 521833416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.55836, y: 2.17, z: -3.8456}
+  m_LocalPosition: {x: 1.55836, y: 1.03, z: -3.8456}
   m_LocalScale: {x: 1, y: 2, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -585,13 +609,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490096315}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.64, y: 16.93, z: -4.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1490096319
 MonoBehaviour:
   m_ObjectHideFlags: 0

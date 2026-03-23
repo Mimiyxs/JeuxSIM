@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,7 +17,6 @@ public class VueSouris : MonoBehaviour
     {
         actionSouris = InputSystem.actions.FindAction("Look");
         parent = transform.parent;
-
     }
 
     void Update()

@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 567927861}
   m_Layer: 0
   m_Name: Objectif
-  m_TagString: Untagged
+  m_TagString: Objectif
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2eaa4a9f9b98020a219103e2e33b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DetectionFin
-  joueur: {fileID: 0}
+  joueur: {fileID: 2070397965}
 --- !u!4 &576499523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1969175841713867496, guid: e50b7d6f0daa59a41848f7b2fc07a339, type: 3}
@@ -1674,6 +1674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 830905642}
+  - component: {fileID: 830905643}
   m_Layer: 0
   m_Name: GestionnaireDeJeu
   m_TagString: Untagged
@@ -1696,6 +1697,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &830905643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830905641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06b2e5ece67dc8418574f79da4865b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VerrouillerSouris
 --- !u!1001 &848527494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1861,7 +1874,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
-  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1937,7 +1949,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0.021471407, y: 0.93965083, z: -0.34137136, w: -0.0078004696}
-  m_LocalPosition: {x: 0.09778404, y: 1.67, z: 2.865}
+  m_LocalPosition: {x: 0.09778404, y: 3.49, z: 5.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1987,28 +1999,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &963194231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d276bdc1b512c745bf2a2c453b051b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VueSouris
-  mouvementSouris:
-    m_Name: Mouvement Souris
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: f1d988f2-8d37-4e22-bdbe-e0084b536aea
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  vitesseRotation: 4
 --- !u!1001 &988889490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3343,6 +3333,9 @@ GameObject:
   - component: {fileID: 2070397968}
   - component: {fileID: 2070397967}
   - component: {fileID: 2070397966}
+  - component: {fileID: 2070397970}
+  - component: {fileID: 2070397971}
+  - component: {fileID: 2070397972}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -3445,6 +3438,57 @@ Transform:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070397970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070397965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43860c74373d1024f83f710ec9d7bc9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouvementJoueur
+  vitesseSaut: 5
+--- !u!143 &2070397971
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070397965}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2070397972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070397965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d276bdc1b512c745bf2a2c453b051b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VueSouris
+  vitesseRotation: 4
 --- !u!1001 &2093287686
 PrefabInstance:
   m_ObjectHideFlags: 0

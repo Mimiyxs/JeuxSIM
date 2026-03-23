@@ -2,23 +2,33 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
-public class Cube : MonoBehaviour
+public class Exercice2Agent : MonoBehaviour
 {
-    private NavMeshAgent navMeshAgent;
-    private InputAction _espace;
+    [SerializeField]
+    private GameObject terrain;
+
+    private NavMeshAgent agent;
+
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        _espace = InputSystem.actions.FindAction("Jump");
-        navMeshAgent.destination = new Vector3(5.46999979f, 0.439999998f, -5.59000015f);
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (_espace.IsPressed())
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            Vector2 positionSouris = Mouse.current.position.ReadValue();
+            Ray ray = Camera.main.ScreenPointToRay(positionSouris);
 
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (hit.collider.gameObject == terrain)
+                {
+                    agent.SetDestination(hit.point);
+                }
+            }
         }
+
     }
 }

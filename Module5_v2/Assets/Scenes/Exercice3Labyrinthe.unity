@@ -1592,6 +1592,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8474707904604012890, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8474707904604012890, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
       propertyPath: pointPatrouilles.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1659,7 +1663,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3159783951853126651, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 909735257}
   m_SourcePrefab: {fileID: 100100000, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
 --- !u!1 &765508025
 GameObject:
@@ -1907,6 +1914,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1969175841713867496, guid: e50b7d6f0daa59a41848f7b2fc07a339, type: 3}
   m_PrefabInstance: {fileID: 782538575}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &800532537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3159783951853126651, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
+  m_PrefabInstance: {fileID: 2014578682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &800532538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800532537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94232c72299d1cc4d8322dd6604ca015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComportementObjet
+  joueur: {fileID: 76766595}
+  pointPatrouilles:
+  - {fileID: 1148386724}
+  - {fileID: 1457535707}
+  - {fileID: 1039805823}
+  - {fileID: 1990646593}
+  agent: {fileID: 0}
+  animateur: {fileID: 0}
 --- !u!1001 &809708564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2050,6 +2082,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1969175841713867496, guid: e50b7d6f0daa59a41848f7b2fc07a339, type: 3}
   m_PrefabInstance: {fileID: 848527494}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &909735256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3159783951853126651, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
+  m_PrefabInstance: {fileID: 763322481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &909735257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909735256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94232c72299d1cc4d8322dd6604ca015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComportementObjet
+  joueur: {fileID: 76766595}
+  pointPatrouilles:
+  - {fileID: 1148386724}
+  - {fileID: 1457535707}
+  - {fileID: 1039805823}
+  - {fileID: 1990646593}
+  agent: {fileID: 0}
+  animateur: {fileID: 0}
 --- !u!1001 &944652262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3700,6 +3757,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8474707904604012890, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8474707904604012890, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
       propertyPath: gameObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3767,7 +3828,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3159783951853126651, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 800532538}
   m_SourcePrefab: {fileID: 100100000, guid: ac56446262dd7c54d923481ce7c18e9d, type: 3}
 --- !u!1 &2020847474
 GameObject:

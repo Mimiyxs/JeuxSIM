@@ -11,11 +11,12 @@ public class EtatPatrouille : EtatEnnemis
         ChoisirPoint();
     }
 
-    public override void Executer()
+    public override void Executer(float timer)
     {
         if (sujet.JoueurIsVisible())
         {
-            //sujet.ChangerEtat(sujet.etatPoursuivre);
+            sujet.ChangerEtat(sujet.etatPoursuite);
+            return;
         }
         else if (sujet.agent.remainingDistance < 0.5f) ChoisirPoint();
     }

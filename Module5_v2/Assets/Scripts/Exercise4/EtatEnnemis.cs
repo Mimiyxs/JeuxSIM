@@ -8,5 +8,5 @@ public abstract class EtatEnnemis
 
     public virtual void Enter() { }
     public virtual void Exit() { }
-    public abstract void Executer();
+    public abstract void Executer(float timer);
 }

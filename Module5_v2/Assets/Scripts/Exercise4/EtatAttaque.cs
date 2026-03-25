@@ -19,7 +19,7 @@ public class EtatAttaque : EtatEnnemis
 
         if (distanceJoueur > 2.5f)
         {
-            sujet.ChangerEtat(sujet.etatPatrouille);
+            sujet.ChangerEtat(sujet.etatAttente);
         }
     }
 

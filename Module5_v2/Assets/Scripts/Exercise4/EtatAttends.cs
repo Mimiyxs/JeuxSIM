@@ -11,7 +11,7 @@ public class EtatAttends : EtatEnnemis
     public override void Enter()
     {
         sujet.animateur.SetBool("Walk", false);
-        tempsAttente = Random.Range(2f, 5f);
+        tempsAttente = Random.Range(3f, 5f);
     }
     public override void Executer(float timer)
     {

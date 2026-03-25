@@ -14,6 +14,8 @@ public class EtatPoursuite : EtatEnnemis
 
         Vector3 positionJoueur = sujet.joueur.transform.position;
         Vector3 positionEnnemi = sujet.transform.position;
+
+        //Calcule le distance entre Skeleton et le joueur
         float distanceJoueur = (positionJoueur - positionEnnemi).magnitude;
 
         if (distanceJoueur < 2.5f)

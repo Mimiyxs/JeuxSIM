@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 195563760}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ChoixEquilibre
         m_Mode: 1
@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 195563758}
   - component: {fileID: 195563757}
   - component: {fileID: 195563759}
+  - component: {fileID: 195563760}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -423,7 +424,7 @@ MonoBehaviour:
   - {fileID: 8728249533467376854, guid: 71a5924b8814b46329c6ee9bc5f718cb, type: 3}
   - {fileID: 6070212843742618542, guid: 36c1b4227f76e4567964f5bc3647095b, type: 3}
   nbRessources: 75
-  Ressources: []
+  ressources: []
 --- !u!4 &195563758
 Transform:
   m_ObjectHideFlags: 0
@@ -451,6 +452,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08101be94070b7a0da7d48a50a24fc0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &195563760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195563756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4558b3d6127c1f649979a0ddaf66af61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuController
+  villageois: {fileID: 1894650302}
 --- !u!1 &204181109
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,7 +820,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 195563760}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ChoixPlusProche
         m_Mode: 1
@@ -2155,7 +2169,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 195563760}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ChoixHasard
         m_Mode: 1
@@ -2166,7 +2180,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1865851286
 MonoBehaviour:
   m_ObjectHideFlags: 0

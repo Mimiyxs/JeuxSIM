@@ -2,10 +2,21 @@
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField] private GameObject villageoise;
+    [SerializeField]
+    private Villageois villageois;
 
     public void ChoixHasard()
     {
-        villageoise.Changer
+        villageois.ChangerStrategieChoix(new StrategieChoixHasard());
+    }
+
+    public void ChoixPlusProche()
+    {
+        villageois.ChangerStrategieChoix(new StrategieChoixPlusProche());
+    }
+
+    public void ChoixEquilibre()
+    {
+        villageois.ChangerStrategieChoix(new StrategieChoixEquilibre());
     }
 }

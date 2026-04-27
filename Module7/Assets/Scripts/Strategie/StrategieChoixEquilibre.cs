@@ -1,30 +1,30 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
+
 public class StrategieChoixEquilibre : StrategieChoixRessource
 {
+    public override TypeStrategie Type => TypeStrategie.Equilibre;
+
     public override int ChoisirRessource(Villageois villageois, List<Ressource> ressources)
     {
+        // On choisit la premiere ressource comme max
         int indexMax = 0;
-
-        // Calculer la valeur ajustée pour la première ressource
         float distanceMax = Vector3.Distance(villageois.transform.position, ressources[0].transform.position);
         float valeurMax = ressources[0].valeur / (distanceMax * distanceMax);
 
-        // Parcourir les ressources pour trouver celle avec la meilleure valeur ajustée
-        for(int i = 1; i < ressources.Count; i++)
+        // On compare avec les autres ressources
+        for (int i = 1; i < ressources.Count; i++)
         {
-            // Calculer la distance entre le villageois et la ressource courante (i)
             float distance = Vector3.Distance(villageois.transform.position, ressources[i].transform.position);
             float valeur = ressources[i].valeur / (distance * distance);
 
-            // Si la valeur ajustée de la ressource courante est supérieure à la valeur maximale actuelle, mettre à jour la valeur maximale et l'index
             if (valeur > valeurMax)
             {
                 valeurMax = valeur;
                 indexMax = i;
             }
         }
+
         return indexMax;
     }
 }
-    

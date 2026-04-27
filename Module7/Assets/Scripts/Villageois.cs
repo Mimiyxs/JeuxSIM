@@ -14,17 +14,16 @@ public class Villageois : MonoBehaviour
     [SerializeField]
     private TMP_Text texteRoches;
 
-    private int or = 0;
-    private int plantes = 0;
-    private int roches = 0;
+    [HideInInspector] public int or = 0;
+    [HideInInspector] public int plantes = 0;
+    [HideInInspector] public int roches = 0;
     private int numeroRessourceChoisie = -1;
     private NavMeshAgent navMeshAgent;
 
     private StrategieChoixRessource strategieChoix;
 
-    void Start()
+    void Awake()
     {
-        strategieChoix = new StrategieChoixHasard();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -50,7 +49,13 @@ public class Villageois : MonoBehaviour
         }
     }
 
-    private void MiseAJourTextes()
+    // Exercice 2
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("TypeStrategie", (int)strategieChoix.Type);
+    }
+
+    public void MiseAJourTextes()
     {
         texteOr.text = "Or: " + or;
         textePlantes.text = "Plantes: " + plantes;
@@ -60,6 +65,7 @@ public class Villageois : MonoBehaviour
     public void ChangerStrategieChoix(StrategieChoixRessource strategie)
     {
         strategieChoix = strategie;
+        Debug.Log("Le villageois utilise maintenant la stratégie : " + strategie.GetType().Name);
         AllerVersProchaineRessource();
     }
 
@@ -79,13 +85,4 @@ public class Villageois : MonoBehaviour
             navMeshAgent.SetDestination(ressource.transform.position);
         }
     }
-
-    public int GetIndexStrategieActuelle()
-    {
-        if (strategieChoix is StrategieChoixHasard) return 0;
-        if (strategieChoix is StrategieChoixPlusProche) return 1;
-        if (strategieChoix is StrategieChoixEquilibre) return 2;
-        return 0;
-    }
-    
 }

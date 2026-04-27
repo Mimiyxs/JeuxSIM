@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,13 +10,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private int nbRessources;
+
     [SerializeField]
-    private Villageois villageois;
+    private Villageois villageois; // Exercice 3
 
     [HideInInspector]
     public List<Ressource> ressources;
 
     public static GameManager Instance;
+
+    private string nomFichierSauvegarde; // Exercice 3
 
     void Awake()
     {
@@ -26,13 +30,34 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        CreerRessources();
-        villageois = GetComponent<Villageois>();
+        // Exercice 3
+        //Définit le chemin du fichier de sauvegarde et charge l'état du jeu s'il existe
+        nomFichierSauvegarde = Application.persistentDataPath + "/etat-jeu.json";
+
+        ChargerEtatJeu(); // Récupèr les scores sauvegarés.
+
+        // Exercice 2
+        ChargerStrategie(); // Récupèr la stratégie choisie par l'utilisateur
     }
 
-    private void CreerRessources()
+    void Update()
     {
-        for (int i = 0; i < nbRessources; i++)
+        if (ressources.Count == 0)
+        {
+            CreerRessources(nbRessources);
+        }
+    }
+
+    // Exercice 3
+    // Sauvegarde l'état du jeu lorsque l'application est quittée
+    void OnApplicationQuit()
+    {
+        SauvegarderEtatJeu();
+    }
+
+    private void CreerRessources(int nb)
+    {
+        for (int i = 0; i < nb; i++)
         {
             float positionX = Random.Range(-25, 25);
             float positionZ = Random.Range(-25, 25);
@@ -44,14 +69,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (ressources.Count == 0)
-        {
-            CreerRessources();
-        }
-    }
-
     public void DetruireRessource(int numeroRessourceChoisie)
     {
         Ressource ressource = ressources[numeroRessourceChoisie];
@@ -59,10 +76,66 @@ public class GameManager : MonoBehaviour
         ressources.Remove(ressource);
     }
 
-    private void OnApplicationQuit()
+    // Exercice 3
+    private void SauvegarderEtatJeu()
     {
-        int index = villageois.GetIndexStrategieActuelle();
-        PlayerPrefs.SetInt("StrategieVillageois", index);
+        // Crée un objet EtatJeu avec les données actuelles du jeu
+        EtatJeu etatJeu = new EtatJeu
+        {
+            orCollecte = villageois.or,
+            plantesCollecte = villageois.plantes,
+            rochesCollecte = villageois.roches,
+            ressourcesRestantes = ressources.Count
+        };
+
+        //On transforme l'objet EtatJeu en format JSON et on l'écrit dans un fichier de sauvegardes
+        string json = JsonUtility.ToJson(etatJeu);
+        File.WriteAllText(nomFichierSauvegarde, json); //Sauvegarde de l'état du jeu dans un fichier
     }
 
+    // Exercice 2
+    private void ChargerStrategie()
+    {
+        // Récupère la stratégie choisie par l'utilisateur à partir des PlayerPrefs (clé, valeur)
+        // 0 = Hasard (par defaut), 1 = Proche, 2 = Equilibre
+        int type = PlayerPrefs.GetInt("TypeStrategie", 0);
+
+        StrategieChoixRessource strategieChoix;
+
+        switch ((TypeStrategie)type)
+        {
+            case TypeStrategie.Hasard:
+                strategieChoix = new StrategieChoixHasard();
+                break;
+            case TypeStrategie.Proche:
+                strategieChoix = new StrategieChoixPlusProche();
+                break;
+            default:
+                strategieChoix = new StrategieChoixEquilibre();
+                break;
+        }
+
+        villageois.ChangerStrategieChoix(strategieChoix);
+    }
+
+    // Exercice 3
+    private void ChargerEtatJeu()
+    {
+        if (File.Exists(nomFichierSauvegarde))
+        {
+            string json = File.ReadAllText(nomFichierSauvegarde);
+            EtatJeu etatJeu = JsonUtility.FromJson<EtatJeu>(json);
+
+            villageois.or = etatJeu.orCollecte;
+            villageois.plantes = etatJeu.plantesCollecte;
+            villageois.roches = etatJeu.rochesCollecte;
+            villageois.MiseAJourTextes();
+
+            CreerRessources(etatJeu.ressourcesRestantes);
+        }
+        else
+        {
+            CreerRessources(nbRessources);
+        }
+    }
 }
